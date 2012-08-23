@@ -42,9 +42,9 @@ class OozieClient
       JobCollection.new(options)
     end
 
-    def each &block
+    def each
       result = JSON.parse jobs_url.get
-      result['workflows'].each &block
+      result['workflows'].each { |wf| yield self[wf['id']] }
     end
 
   end

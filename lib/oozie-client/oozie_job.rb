@@ -29,15 +29,15 @@ class OozieClient
     end
 
     def info
-      JSON.parse job_url.put({'params' => {'show' => 'info'}})
+      JSON.parse job_url.get({'params' => {'show' => 'info'}})
     end
 
     def definition
-      job_url.put({'params' => {'show' => 'definition'}})
+      job_url.get({'params' => {'show' => 'definition'}})
     end
 
     def log
-      job_url.put({'params' => {'show' => 'log'}})
+      job_url.get({'params' => {'show' => 'log'}})
     end
 
   end
