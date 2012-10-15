@@ -13,8 +13,8 @@ require 'rest-client'
 class OozieClient
   attr_reader :config
 
-  def initialize(oozie_url)
-    @config = Config.new(oozie_url)
+  def initialize(oozie_url, options={})
+    @config = Config.new(oozie_url, options)
   end
 
   def admin
